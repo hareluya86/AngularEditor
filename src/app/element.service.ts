@@ -10,8 +10,13 @@ export class ElementService {
 
   constructor() { }
 
-  getElements() : Observable<EmailElement[]> {
-    // Dummy elements
-    return of(ExampleElements);
-  }
+  // getElements() : Observable<EmailElement[]> {
+  //   // Dummy elements
+  //   return of(ExampleElements);
+  // }
+
+  getElements() : EmailElement[] {
+      // Dummy elements
+      return ExampleElements;
+    }
 }

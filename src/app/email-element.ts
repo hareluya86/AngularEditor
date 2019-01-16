@@ -1,3 +1,6 @@
+import { Type } from '@angular/core';
+
 export class EmailElement {
-    content : string
+
+    constructor(public component: Type<any>, public data: any){}
 }

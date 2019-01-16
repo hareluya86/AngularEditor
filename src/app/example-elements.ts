@@ -1,10 +1,8 @@
 import {EmailElement} from './email-element';
+import { EmailElementComponent } from './email-element/email-element.component';
 
 export const ExampleElements : EmailElement[] = [
-    {
-        content : "<td><p>This is an element</p></td>"
-    },
-    {
-        content : "<td><p>This is another element</p></td>"
-    }
+    new EmailElement(EmailElementComponent,{
+        title : "This is a generic email component"
+    })
 ]

@@ -9,12 +9,15 @@ import { EmailElementComponent } from './email-element/email-element.component';
   declarations: [
     AppComponent,
     EmailTemplateComponent,
-    EmailElementComponent
+    EmailElementComponent  
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EmailElementComponent
+  ]
 })
 export class AppModule { }

@@ -1,8 +1,12 @@
 import {EmailElement} from './email-element';
-import { EmailElementComponent } from './email-element/email-element.component';
+import { EmailHeaderElementComponent } from './email-header-element/email-header-element.component';
+import { EmailTextElementComponent } from './email-text-element/email-text-element.component';
 
 export const ExampleElements : EmailElement[] = [
-    new EmailElement(EmailElementComponent,{
-        title : "This is a generic email component"
+    new EmailElement(EmailHeaderElementComponent,{
+        title : "This is an email header!"
+    }),
+    new EmailElement(EmailTextElementComponent,{
+        text : "This is the email text."
     })
 ]

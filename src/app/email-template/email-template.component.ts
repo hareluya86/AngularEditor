@@ -1,4 +1,4 @@
-import { Component, OnInit, ContentChildren, ViewChildren, ViewContainerRef, Input, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ContentChildren, ViewChildren, ViewContainerRef, Input, ViewChild, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { ElementService } from '../element.service';
 import { EmailElement } from '../email-element';
 import { ElementDirective } from '../element.directive';
@@ -15,6 +15,8 @@ export class EmailTemplateComponent implements OnInit {
   @Input() elements : EmailElement[];
   @ViewChild(ElementDirective) elemHost: ElementDirective;
 
+  @Input() elementViews: ComponentRef<GenericElementComponent>[];
+
   constructor(
     private elementService : ElementService,
     private componentFactoryResolver: ComponentFactoryResolver
@@ -28,16 +30,19 @@ export class EmailTemplateComponent implements OnInit {
 
   initElements() : void {
     this.elements = this.elementService.getElements();
-
+    this.elementViews = new Array();
+    
     for(let i=0; i<this.elements.length; i++){
       let componentFactory = this.componentFactoryResolver
         .resolveComponentFactory(this.elements[i].component);
       
       let viewContainerRef = this.elemHost.viewContainerRef;
-      viewContainerRef.clear();
+      //viewContainerRef.clear();
 
       let componentRef = viewContainerRef.createComponent(componentFactory);
       (<GenericElementComponent>componentRef.instance).data = this.elements[i].data;
+
+      this.elementViews[i] = componentRef;
     }
     
   }

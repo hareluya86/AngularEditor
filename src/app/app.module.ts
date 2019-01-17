@@ -6,7 +6,7 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
 import { EmailHeaderElementComponent } from './email-header-element/email-header-element.component';
 import { ElementDirective } from './element.directive';
 import { EmailTextElementComponent } from './email-text-element/email-text-element.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

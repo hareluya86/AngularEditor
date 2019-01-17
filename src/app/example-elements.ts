@@ -8,5 +8,8 @@ export const ExampleElements : EmailElement[] = [
     }),
     new EmailElement(EmailTextElementComponent,{
         text : "This is the email text."
+    }),
+    new EmailElement(EmailTextElementComponent,{
+        text : "This is another looooooooooooooooonger email text."
     })
 ]
